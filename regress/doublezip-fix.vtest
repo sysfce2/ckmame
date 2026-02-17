@@ -1,0 +1,11 @@
+description test single-rom game (no parent), zip-in-zip, fix from loose file
+return 0
+arguments -Fvc -e extra doublezip
+file mame.db mamedb-doublezip.db
+file roms/doublezip.zip {} 1-4-ok-zip.zip
+file roms/.ckmame.db {} <empty.ckmamedb>
+file extra/1-4.zip 1-4-ok.zip {}
+stdout
+In game doublezip:
+game doublezip                               : correct
+end-of-inline-data
