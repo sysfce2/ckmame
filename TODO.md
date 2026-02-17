@@ -2,18 +2,16 @@
 
 ## Other
 
+- Don't read global ckmamerc file if `--config` option is given
 - Remove fixdat if no ROMs are missing.
 - Fix rom in extra not found if in roms/.ckmame.db but not in roms/ (ckmamedb-file-removed.vtest)
 - Fix failing tests.
 - Empty directory in ArchiveDir is not cleaned up, which makes removing empty archive fail.
-- search loose files in zipped mode: Add option in ArchiveDir to ignore zip files, but keep in .ckmame.db.
-- speedup idea: when opening archives (in extra dirs) only compute hashes if we need them
+- search loose files in zipped mode: Create and search ArchiveDir for top level files and directories in both modes.
 - `mkmamedb`: When a game is in two dat files (identical name and ROMs), skip it from second (with warning).
-- handle multiple writers to ckmamedb
-- rar read support
-- add option to keep ROMs with detector applied
 - bug: when creating a fixdat and re-checks happen, games end up in the fixdat multiple times
 - when committing to unknown fails because source archive is broken, move source archive out of the way.
+- handle swapping files from roms and unknown (rom-from-uknown.vtest) without having to recheck. Need to close and reopen one zip file after copying in one direction.
 
 # Later
 
@@ -41,10 +39,6 @@
     - clean up Exceptions without text
 - C++ cleanups:
   - move lineno into ParserSource
-  - add tests for all tokens in all parser backends:
-    - cm
-    - rc
-    - xml
 
 ## Tests
 - Remove mame.db from tests that don't need it.
@@ -60,6 +54,10 @@
   - `swap-roms-2.test`
   - `rom-many.test`
   - `swap-roms.test`
+- add tests for all tokens in all parser backends:
+  - cm
+  - rc
+  - xml
 - case differences (game name / archive / rom / file in archive)
 - extra cleanup done when all games checked
 - is superfluous file that needs detector cleaned up correctly?
