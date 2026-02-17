@@ -1,0 +1,9 @@
+clrmamepro (
+)
+
+game (
+	name doublezip
+	description doublezip
+	rom ( name 1-4-ok.zip size 114 crc b9b232c4 md5 5bd44f22846e2cbc1d083f92a09c05e3 sha1 08b049ab557572bbc88f8b48013ba47769a5dc83 )
+)
+

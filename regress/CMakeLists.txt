@@ -50,6 +50,7 @@ set(DBS
   mamedb-deadbeefish.db
   mamedb-disk.db
   mamedb-disk-many.db
+  mamedb-doublezip.db
   mamedb-file-no-crc.db
   mamedb-lost-parent-ok.db
   mamedb-merge-parent.db
