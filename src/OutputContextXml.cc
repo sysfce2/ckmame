@@ -57,7 +57,7 @@ OutputContextXml::OutputContextXml(const std::string &fname_, int flags) : fname
     }
 
     doc = xmlNewDoc(xml_string("1.0"));
-    doc->encoding = xml_string(strdup("UTF-8"));
+    doc->encoding = reinterpret_cast<xmlChar *>(strdup("UTF-8"));
     xmlCreateIntSubset(doc, xml_string("datafile"), xml_string("-//Logiqx//DTD ROM Management Datafile//EN"), xml_string("http://www.logiqx.com/Dats/datafile.dtd"));
     root = xmlNewNode(nullptr, xml_string("datafile"));
     xmlDocSetRootElement(doc, root);
